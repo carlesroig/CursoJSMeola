@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="codigo.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Proyecto Dia6</title>
+</head>
+<body>
+    
+    <div class="lista">
+        <div class="encap" id="en">
+            <h3>Alumno: Federico Garay</h3>
+            <button id="desplegar" onclick="desplegar()">&#129047</button>
+        </div>
+        
+        <div class="card" id="ca">
+            <div class="estudiante">
+                <h3>Alumno: Federico Garay</h3>
+            </div>
+            <button onclick="mostrarNotas()">Mostrar Notas</button>
+            <h4>Notas:</h4>
+            <ul id="listaNotas">
+            </ul>
+            <div class="info">
+                <button onclick="calcularPromedio()">Calcular promedio</button>
+                <h4>Promedio: <span id="promedio"></span></h4>
+                <button onclick="notaMasAlta()">Buscar nota más alta</button>
+                <h4>Nota más alta: <span id="nota"></span></h4>
+                <button onclick="hayAplazo()">Consultar aplazo</button>
+                <h4>¿Hubo algún aplazo? <span id="aplazo"></span></h4>
+
+                <button id="desplegar2" onclick="desplegar2()">&#129045</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

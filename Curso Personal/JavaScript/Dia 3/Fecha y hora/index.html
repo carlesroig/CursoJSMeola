@@ -1,0 +1,51 @@
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sonido</title>
+        <style>
+            h1{
+                font-size: 80px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+        </style>
+    </head>
+    <body onload="reloj()">
+
+        <p>Se viene alarma</p>
+
+        <input type="number" id="tiempo">
+        <button onclick="empiezaTiempo()"> Alarma </button>
+        <h1 id="titul" style="color: red;">00:00:00</h1>
+        <audio id="alarma">
+            <source src="alarma.mp3" type="audio/mpeg">
+            Sonido no habilitado
+        </audio>
+
+        <script>
+            let tempo=document.getElementById("tiempo");
+            let tit=document.getElementById("titul");
+            let sonido=document.getElementById("alarma");
+
+            function empiezaTiempo(){
+                setTimeout(acabaTiempo,1000*tempo.value);
+            }
+
+            function acabaTiempo(){
+                sonido.play();
+            }
+            function reloj(){
+                setInterval(tictac,1000);
+            }
+            function tictac(){
+                let tiempo1= new Date();
+                let hora=String(tiempo1.getHours()).padStart(2,"0");
+                let min=String(tiempo1.getMinutes()).padStart(2,"0");
+                let seg=String(tiempo1.getSeconds()).padStart(2,"0");
+
+                let texto=hora +":"+min+":"+seg;
+                tit.textContent=texto;
+            }
+        </script>
+    </body>
+    </html>

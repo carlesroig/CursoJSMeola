@@ -1,0 +1,49 @@
+body {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #3C3D40;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: azure;
+}
+
+.comp {
+    background-color: #666A73;
+    border-radius: 15px;
+    width: 30%;
+    padding: 20px;
+    box-shadow: 0 0 20px 2px #0FC2C0;
+    text-align: center;
+}
+
+.saldo {
+    font-size: large;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.saldo p {    
+    margin: 1rem;
+}
+hr{
+    background-color: #0FC2C0;
+    border: 1px solid #92e2e1;
+    width: 50%;
+}
+
+/* .fila {
+    display: inline-block;
+    color: #0FC2C0;
+}
+#cbu {
+    color: #0FC2C0;
+}
+#abierto {
+    color: #0FC2C0;
+}
+#cuenta {
+    color: #0FC2C0;
+} */

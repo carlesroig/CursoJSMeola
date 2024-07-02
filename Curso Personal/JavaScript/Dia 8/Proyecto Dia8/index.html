@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="codigo.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Proyecto Dia8</title>
+</head>
+<body onload="anyadirVacio()">
+    
+    <div class="lista">
+        <div class="from" id="fr">
+            <div class="estudiante">
+                <h3>AÑADIR EMPLEADO</h3>
+            </div>
+            <div class="preguntas">
+                <p>Legajo</p>
+                <input type="text" id="txtLegajo">
+                <p>Nombre</p>
+                <input type="text" id="txtNombre">
+                <p>Apellido</p>
+                <input type="text" id="txtApellido">
+                <p>Fecha de nacimiento</p>
+                <input type="text" id="txtNacimiento">
+                <p>Cargo</p>
+                <input type="text" id="txtCargo">
+                <br>
+                <br>
+                <h1 id="alert"></h1>
+                <button onclick="agregarEmpleado()">Guardar empleado</button>
+            </div>
+        </div>
+
+        <div class="emple" id="em">
+            <div class="estudiante">
+                <h3>LISTA EMPLEADO</h3>
+                <select id="opciones" onchange="mostrarInfo()">
+                </select>
+            </div>
+            <div class="preguntas">
+                <h1 id="leg"></h1>
+                <h1 id="nom"></h1>
+                <h1 id="apell"></h1>
+                <h1 id="fech"></h1>
+                <h1 id="carg"></h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

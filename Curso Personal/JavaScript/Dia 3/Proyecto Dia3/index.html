@@ -1,0 +1,96 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonido</title>
+    
+</head>
+<body onload="relojero()">
+
+    <h1 id="tiempo"></h1>
+
+    <p>1. Cual es la capital de Francia?</p>
+    <input type="text" id="respuesta1">
+    <p>2. (7 * 5) + 15</p>
+    <input type="text" id="respuesta2">
+    <p>3. Simbolo quimico del agua</p>
+    <input type="text" id="respuesta3">
+    <p>4. Año del descubrimiento de america</p>
+    <input type="text" id="respuesta4">
+    <p>5. Nombre de los 4 Beatles</p>
+    <input type="text" id="respuesta5">
+    <br><br>
+    <button onclick="finalizado()">Terminé!</button>
+    <br><br>
+    <button onclick="volverAIntentar()">Volver a Intentar</button>
+
+    <script>
+        let crono
+        let acaba
+        let sonido=document.getElementById("alarma");
+        let parpaR
+        let parpaB
+        function finalizado(){
+            let fecha=new Date();
+            let restante=Number(document.getElementById("tiempo").textContent);
+            let tiempoRes=30-restante;
+
+            alert("Tiempo: "+ tiempoRes + " \n"+
+            "Respuesta 1: "+ document.getElementById("respuesta1").value + " \n"+
+            "Respuesta 2: "+ document.getElementById("respuesta2").value + " \n"+
+            "Respuesta 3: "+ document.getElementById("respuesta3").value + " \n"+
+            "Respuesta 4: "+ document.getElementById("respuesta4").value + " \n"+
+            "Respuesta 5: "+ document.getElementById("respuesta5").value + " \n"+
+            "Realizado el : "+ fecha.toLocaleString('es-ES'));
+            location.reload();
+        }
+
+        function empiezaTiempo(){
+            
+            mostrarFecha();
+        }
+
+        function acabaTiempo(){
+            clearInterval(crono);
+            
+            alert("Se acabó la fiesta");
+        }
+
+        function relojero(){
+            acaba=setTimeout(acabaTiempo,1000*31);  
+            crono=setInterval(ticTac,1000)
+
+            document.getElementById("tiempo").textContent = 30  ;
+        }
+
+        function ticTac(){
+            let tempo=document.getElementById("tiempo").textContent;
+
+            document.getElementById("tiempo").textContent = tempo-1;
+            if(tempo==11){
+                setInterval(parpadeoRojo,500)
+                setInterval(parpadeoNegro,1000)
+            }
+        }
+
+        function mostrarFecha() {
+            let fecha=new Date();
+    
+            alert(fecha.toLocaleDateString('es-ES'));
+        }
+
+        function volverAIntentar(){
+            location.reload();
+        }
+
+        function parpadeoRojo(){
+            document.getElementById("tiempo").style.color="red"
+        }
+
+        function parpadeoNegro(){
+            document.getElementById("tiempo").style.color="black"
+        }
+
+    </script>
+</body>
+</html>

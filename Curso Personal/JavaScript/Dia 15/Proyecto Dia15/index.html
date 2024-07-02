@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 15</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/axios@1.3.4/dist/axios.min.js"></script>
+    <script src="codigo.js"></script>
+</head>
+<body onload="mostrar()">
+    <div>
+        <h2>Administración de productos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Modelo</th>
+                    <th>Color</th>
+                    <th>Almacenamiento</th>
+                    <th>Procesador</th>
+                </tr>
+            </thead>    
+            <tbody id="contenido">
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div>
+            <h4>Consultar artículo</h4>
+            <input type="numer" id="txtConsulta" placeholder="Ingrese su ID">
+            <button onclick="buscar()">Consultar</button><br/><br/>
+        </div>
+        <div>
+            <label for="consultaNombre">Nombre:</label>
+            <textarea id="consultaNombre" rows="1" cols="30"></textarea>
+        </div>
+        <div>
+            <label for="consultaModelo">Modelo:</label>
+            <textarea id="consultaModelo" rows="1" cols="30"></textarea>
+        </div>
+        <div>
+            <label for="consultaColor">Color:</label>
+            <textarea id="consultaColor" rows="1" cols="30"></textarea>
+        </div>
+        <div>
+            <label for="consultaAlmacenamiento">Almacenamiento:</label>
+            <textarea id="consultaAlmacenamiento" rows="1" cols="30"></textarea>
+        </div>
+        <div>
+            <label for="consultaProcesador">Procesador:</label>
+            <textarea id="consultaProcesador" rows="1" cols="30"></textarea>
+        </div><br/>
+        <button onclick="modificar()">Modificar</button>
+        <button onclick="eliminar()">Eliminar</button>
+    </div>
+</body>
+</html>

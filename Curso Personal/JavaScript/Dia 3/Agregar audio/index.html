@@ -1,0 +1,36 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonido</title>
+</head>
+<body>
+
+    <p>Se viene alarma</p>
+
+    <input type="number" id="tiempo">
+    <button onclick="empiezaTiempo()"> Alarma </button>
+    <h1 id="titul"></h1>
+    <audio id="alarma">
+        <source src="alarma.mp3" type="audio/mpeg">
+        Sonido no habilitado
+    </audio>
+
+    <script>
+        let tempo=document.getElementById("tiempo");
+        let tit=document.getElementById("titul");
+        let sonido=document.getElementById("alarma");
+
+        function empiezaTiempo(){
+            setTimeout(acabaTiempo,1000*tempo.value);
+        }
+
+        function acabaTiempo(){
+            tit.textContent="Explotó";
+            tit.style.color="red"
+            sonido.play();
+        }
+
+    </script>
+</body>
+</html>

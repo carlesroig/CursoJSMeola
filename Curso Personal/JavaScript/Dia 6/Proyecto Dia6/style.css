@@ -1,0 +1,110 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:   #025159;
+    color: #F2F2F2;
+}
+#listaNotas {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+    margin-left: -8%;
+}
+
+#listaNotas li{
+    margin-top: 5px;
+}
+
+#listaNotas.visible {
+    opacity: 1;
+    height: auto;
+}
+.encap {
+    border: 2px solid #32A69A;
+    border-radius: 10px;
+    background-color:#7BA1A6;
+    box-shadow: 5px 5px 10px #32A69A;
+    margin-left: 40%;
+    margin-top: 5%;
+    width: 25%;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 1s;
+    z-index: 5;
+}
+.encap h3{
+    font-size: 40px;
+}
+
+.encap #desplegar    {
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.card {
+    border: 2px solid #32A69A;
+    border-radius: 10px;
+    background-color: #7BA1A6;
+    box-shadow: 5px 5px 10px #32A69A;
+    margin-left: 40%;
+    margin-top: -1%;
+    text-align: center;
+    width: 25%;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    display: none;
+    transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
+    z-index: 1;
+}
+.estudiante h3{
+    font-size: 40px;
+}
+li{
+    list-style:none;
+    
+}
+button{
+    border-radius: 15px;
+    width: 200px;
+    height: 50px;
+    transition: 1S;
+    background-color: #acd0d4;
+}
+button:hover{
+    background-color: #aad9df;
+    width: 205PX;
+    height: 52px;
+    box-shadow: 0px 0px 15px #32a69a96;
+}
+
+#desplegar2{
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.formulario {
+
+    border: 2px solid #32A69A;
+    border-radius: 10px;
+    background-color: #7BA1A6;
+    box-shadow: 5px 5px 10px #32A69A;
+    margin-left: 40%;
+    margin-top: 5%;
+    width: 25%;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 1s;
+    z-index: 5;
+
+}
+.formulario section {
+
+    
+
+}

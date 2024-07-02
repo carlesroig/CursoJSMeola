@@ -1,0 +1,26 @@
+body {
+    text-align: center;
+    background-color: darkred;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 180px;
+    width: 180px;
+}
+
+p {
+    font-size: large;
+    font-weight: bolder;
+    font-style: italic;
+}
+p {    
+    margin: 1rem;
+}
+
+.fila {
+    display: inline-block;
+}
