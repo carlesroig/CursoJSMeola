@@ -1,0 +1,20 @@
+const app=Vue.createApp({
+    data(){
+        return{
+            name:'',
+            name2:''
+        };
+    },
+    methods:{
+        alerta(){
+            alert("tete");
+        },
+        output(event){
+            this.name=event.target.value
+        },
+        output2(event){
+            this.name2=event.target.value
+        }
+    }
+});
+app.mount("#assignment")

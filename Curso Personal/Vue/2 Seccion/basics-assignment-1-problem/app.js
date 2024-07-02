@@ -9,7 +9,7 @@ const app=Vue.createApp({
     methods:{
         aleatorio(){
             // const ale=Math.random();
-            return Math.random()
+            return Math.round(Math.random()*100)
         }
     }
 });
