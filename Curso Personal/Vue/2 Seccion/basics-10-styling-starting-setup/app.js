@@ -3,12 +3,18 @@ const app=Vue.createApp({
         return{
             boxA:false,
             boxB:false,
-            boxC:false,
+            boxC:false
         }
     },
-    method:{
+    methods:{
         boxselected(box){
-            if(box)
+            if(box ==='A'){
+                this.boxA = !this.boxA
+            }else if(box ==='B'){
+                this.boxB = !this.boxB
+            }else if(box ==='C'){
+                this.boxC = !this.boxC
+            }
         }
     }
 });
