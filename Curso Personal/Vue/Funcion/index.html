@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/vue@3.4.9/dist/vue.global.js" defer></script>
+    <script src="AmigosContacto.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>CAMBIAR DATOS</h1>
+    </header>
+    
+    <section id="app">
+      <div id="secciones">
+        <ul>
+            <li v-for="obj in objetos" >
+                <h1>{{obj.nombre}}</h1>
+                <p>COLOR : {{obj.color}}</p>
+                <p>MODELO :{{obj.model}}</p>
+                <p>PANEL :{{obj.panel}}</p>
+            </li>
+        </ul>
+      </div>
+      <div id="secciones">
+        <input v-model="searchQuery">
+        <button @click="cambiartodos">CAMBIAR TODO</button>
+        <ul>
+            <li v-for="obj in found" >
+                <h1>{{obj.nombre}}</h1>
+                <p>COLOR : {{obj.color}}</p>
+                <p>MODELO :{{obj.model}}</p>
+                <p>PANEL :{{obj.panel}}</p>
+                <button v-if="btn" @click="cambiarPropiedades(searchQuery)">CAMBIAR</button>
+            </li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>

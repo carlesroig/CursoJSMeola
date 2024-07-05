@@ -33,7 +33,7 @@
 
       <input type="text" v-model="searchQuery" />
       <ul>
-        <li v-for="goal in found" :key="goal.nombre">
+        <li v-for="obj in found" :key="obj.nombre">
           <h1>{{ goal.nombre }}</h1>
           <p>{{ goal.goal }}</p>
         </li>
