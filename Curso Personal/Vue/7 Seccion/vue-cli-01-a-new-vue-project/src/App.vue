@@ -3,23 +3,25 @@
         <header>
             <h1>LISTA AMIGOS</h1>
         </header>
+        <nuevo-amigos @add-contact="addContact"></nuevo-amigos>
         <ul>
             <contactos-amigos 
-                name= "Manuel Lorenz"
-                phone-number= "0213 1346 4846"
-                email-address= "manuel@local.com"
-                is-favorite= "1">
+                v-for="friend in friends"
+                :key="friend.id"
+                :id="friend.id"
+                :name= "friend.name"
+                :phone-number= "friend.phone"
+                :email-address= "friend.email"
+                :is-favorite= "friend.isFavorite"
+                @ser-Favorito="FavotireStatus"
+                @delete="deleteContact">
+                
             </contactos-amigos>
-            <contactos-amigos 
-                name= "Julia Jones"
-                phone-number= "0213 1346"
-                email-address= "julia@local.com"
-                is-favorite= "2">
-            </contactos-amigos> 
         </ul>
     </section>
 </template>
 <script>
+
 export default {
   data() {
     return {
@@ -29,17 +31,37 @@ export default {
           name: "Manuel Lorenz",
           phone: "0213 1346 4846",
           email: "manuel@local.com",
-          
+          isFavorite:true,
         },
         {
           id: "carles",
           name: "Carles Moxo",
           phone: "0213 1346 4846",
           email: "carles@local.com",
+          isFavorite:false,
         },
       ],
     };
   },
+  methods:{
+    FavotireStatus(friendId){
+      const identificarAmigo= this.friends.find((friend) => friend.id === friendId)
+      identificarAmigo.isFavorite = !identificarAmigo.isFavorite
+    },
+    addContact(name,phone,email){
+      const nuevoAmigo={
+        id:new Date().toISOString(),
+        name:name,
+        phone:phone,
+        email:email,
+        isFavorite:false
+      }
+      this.friends.push(nuevoAmigo)
+    },
+    deleteContact(friendId){
+      this.friends=this.friends.filter((friend)=>friend.id !== friendId)
+    }
+  }
 };
 </script>
 <style>
@@ -74,7 +96,7 @@ header {
   list-style: none;
 }
 
-#app li {
+#app li,#app form {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   margin: 1rem auto;
   border-radius: 10px;
@@ -106,6 +128,19 @@ header {
   background-color: #ec3169;
   border-color: #ec3169;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
+}
+#app input {
+  font: inherit;
+  padding: 0.15rem;
+}
+#app label {
+  font-weight: bold;
+  margin-right: 1rem;
+  width: 7rem;
+  display: inline-block;
+}
+#app form div {
+  margin: 1rem 0;
 }
 
 </style>
