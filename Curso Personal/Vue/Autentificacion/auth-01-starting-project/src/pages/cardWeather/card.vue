@@ -66,7 +66,7 @@ export default {
       items: [],
       city: 'Gandia',
       key: '271f9d2143fd7796664166eee9f5893f',
-      lang: 'sp',
+      lang: 'es',
       units: 'metric',
       cityName: { text: '' },
       weatherIcon: '',
@@ -138,6 +138,7 @@ export default {
     #6d5bdb 38.98%,
     #661bb1 77.96%
   );
+  box-shadow: 0px 0 15px 5px rgba(0, 0, 0, 0.5);
   display: flex;
   max-width: 358px;
   flex-direction: column;
